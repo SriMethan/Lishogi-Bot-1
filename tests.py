@@ -25,9 +25,8 @@ def download_yaneuraou():
 
 def download_nnue():
     response = requests.get('https://github.com/WandererXII/shoginet/raw/main/eval/nn.bin', allow_redirects=True)
-    with open('nn.bin', 'wb') as file:
+    with open('nn.bin', './eval/nn.bin') as file:
         file.write(response.content)
-    copyfile('./eval/nn.bin', 'nn.bin')    
         
 
 def run_bot(CONFIG, logging_level):
