@@ -8,7 +8,7 @@ import shogi
 import shogi.KIF as kif
 from shutil import copyfile
 import importlib
-import svn 
+import curl
 lishogi_bot = importlib.import_module("lishogi-bot")
 
 TOKEN = 'Ao7zQxDqoBhE7tpG'
@@ -19,13 +19,13 @@ def test_nothing():
 
 
 def download_yaneuraou():
-    response = requests.get('https://github.com/WandererXII/shoginet/raw/main/YaneuraOu-by-gcc', allow_redirects=True)
+    response = requests.get('https://github.com/WandererXII/shoginet/raw/main/YaneuraOu-by-gcc', allow_redirects=True) 
     with open('yaneuraou.exe', 'wb') as file:
         file.write(response.content)
 
 
 def download_nnue():
-    response = svn export('https://github.com/WandererXII/shoginet/main/eval'), allow_redirects=True)
+    response = curl https://codeload.github.com/WandererXII/shoginet/tar.gz/master | \tar -xz --strip=2 shoginet-master/eval, allow_redirects=True)
     with open('./eval/nn.bin', 'wb') as file:
         file.write(response.content)
         
