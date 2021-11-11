@@ -24,7 +24,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pytest pytest-timeout
-        pip install pycurl
+        pip install pycur l7.44.1
         pip install -r requirements.txt
     - name: Test with pytest
       run: |
