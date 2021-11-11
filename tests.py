@@ -25,7 +25,7 @@ def download_yaneuraou():
 
 
 def download_nnue():
-    response = svn export https://github.com/WandererXII/shoginet/main/eval, allow_redirects=True)
+    response = svn export('https://github.com/WandererXII/shoginet/main/eval'), allow_redirects=True)
     with open('./eval/nn.bin', 'wb') as file:
         file.write(response.content)
         
