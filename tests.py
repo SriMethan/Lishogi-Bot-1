@@ -8,7 +8,6 @@ import shogi
 import shogi.KIF as kif
 from shutil import copyfile
 import importlib
-import curl
 lishogi_bot = importlib.import_module("lishogi-bot")
 
 TOKEN = 'Ao7zQxDqoBhE7tpG'
@@ -25,8 +24,8 @@ def download_yaneuraou():
 
 
 def download_nnue():
-    response = curl https://codeload.github.com/WandererXII/shoginet/tar.gz/master | \tar -xz --strip=2 shoginet-master/eval, allow_redirects=True)
-    with open('./eval/nn.bin', 'wb') as file:
+    response = requests.get('https://github.com/WandererXII/shoginet/blob/main/eval/nn.bin?raw=true', allow_redirects=True)
+    with open('nn.bin', 'wb') as file:
         file.write(response.content)
         
 
@@ -106,7 +105,7 @@ def test_bot():
     CONFIG['token'] = TOKEN
     CONFIG['engine']['dir'] = './'
     CONFIG['engine']['name'] = 'yaneuraou.exe'
-    CONFIG['engine']['usi_options']['EvalDir'] = 'D:\a\Lishogi-Bot-1\Lishogi-Bot-1\Eval'
+    CONFIG['engine']['usi_options']['EvalDir'] = 'D:\a\Lishogi-Bot-1\Lishogi-Bot-1'
     run_bot(CONFIG, logging_level)
 
 
