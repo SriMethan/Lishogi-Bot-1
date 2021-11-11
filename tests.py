@@ -25,10 +25,8 @@ def download_yaneuraou():
 
 def download_nnue():
     response = requests.get('https://github.com/WandererXII/shoginet/raw/main/eval/nn.bin', allow_redirects=True)
-    with open('shogi.zip', 'wb') as file:
+    with open('nn.bin', 'wb') as file:
         file.write(response.content)
-    with zipfile.ZipFile('shogi.zip', 'r') as zip_ref:
-        zip_ref.extractall('.')
     copyfile('./eval/nn.bin', 'nn.bin')
 
 
